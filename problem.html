@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>problem</title>
+  </head>
+  <body>
+    <script>
+      const tasks = [
+        {
+          title: "Do laundry",
+          completed: true,
+          priority: "medium",
+        },
+        {
+          title: "Study JavaScript",
+          completed: false,
+          priority: "high",
+        },
+        {
+          title: "Buy groceries",
+          completed: false,
+          priority: "low",
+        },
+        {
+          title: "Go to the gym",
+          completed: false,
+          priority: "medium",
+        },
+      ];
+
+      let main = tasks.reduce(function (acc, current) {
+        if (!acc[current.priority]) {
+          acc[current.priority] = 0;
+        }
+        acc[current.priority]++;
+        return acc;
+      }, {});
+
+      console.log(main);
+    </script>
+  </body>
+</html>
